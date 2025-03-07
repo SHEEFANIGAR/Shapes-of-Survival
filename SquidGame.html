@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes of Survival</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+
+        body {
+            font-family: "Space Grotesk", sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #333, #444);
+            overflow: hidden;
+        }
+
+        #container {
+            background: #d8b986;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 3px solid #5c5252;
+            background-image: url("https://transparenttextures.com/patterns/asfalt.png");
+            background-size: cover;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+            animation: bounce 2s ease infinite;
+            cursor: pointer;
+        }
+
+        #container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 12px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes bounce {
+            0%,
+            50%,
+            100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-10px);
+            }
+            75% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .icons {
+            font-size: 8rem;
+            margin: 0 1rem;
+            transition: filter 0.3s ease;
+            cursor: pointer;
+            filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.6))
+                drop-shadow(-4px -4px -12px rgba(0, 0, 0, 0.4));
+        }
+
+        .scary-text {
+            display: none;
+            font-family: "Creepster", cursive;
+            font-size: 3rem;
+            color: rgb(135, 11, 11);
+            text-shadow: 2px 2px 8px black;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            #container {
+                padding: 1.5rem;
+                height: 250px;
+            }
+
+            .icons {
+                font-size: 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <span class="icons">&#9899;</span>
+        <span class="icons">&#9650;</span>
+        <span class="icons"> &#9632;</span>
+    </div>
+    <div class="scary-text" id="scaryText">THE SHAPES OF SURVIVAL - SQUID GAME</div>
+
+    <script>
+        const container = document.getElementById("container");
+        const scaryText = document.getElementById("scaryText");
+
+        container.addEventListener("click", () => {
+            scaryText.style.display = "block";
+        });
+    </script>
+</body>
+</html>
